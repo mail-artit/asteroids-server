@@ -1,0 +1,93 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <title>Asteroids Online - obviously without asteroids</title>
+    <link rel="stylesheet" type="text/css" href="public/css/forms.css">
+    <link rel="stylesheet" type="text/css" href="public/css/asteroids.css">
+    <script type="text/javascript" src="public/js/libs/KeyboardJS/keyboard.js"></script>
+    <script type="text/javascript" src="public/js/libs/sockjs-client/sockjs-0.3.4.min.js"></script>
+    <script type="text/javascript" src="shared/js/libs/bison/bison.js"></script>
+    <script type="text/javascript" src="shared/js/vector2d.js"></script>
+    <script type="text/javascript" src="public/js/asteroids-client.js"></script>
+    <script type="text/javascript" src="public/js/asteroids-client-makers.js"></script>
+    <script type="text/javascript" src="public/js/asteroids-client-events.js"></script>
+    <script type="text/javascript" src="public/js/asteroids-client-events-keyboard.js"></script>
+</head>
+<body>
+
+    <div id="menu-container">
+        <div id="header">
+        </div>
+
+        <div class="float-left">
+            <form onsubmit="var a = document.getElementById(auth); a.onclick.apply(a); return false;">
+            <table id="login-form">
+                <tr>
+                    <td>
+                        Nickname:                    
+                    </td>            
+                    <td class="center" >
+                        <input type="text" id="nickname" value="Guest"/>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Room:
+                    </td>
+                    <td class="center" >
+                        <input type="text" id="room" value="GuestRoom"/>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Server Url:
+                    </td>
+                    <td class="center" >
+                        <input type="text" id="server" value="http://localhost:9999/echo"/>    
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center" colspan="2">
+                        <input type="submit" value="Get In!" id="auth" onclick="ASTEROIDS.client.auth('nickname', 'room', 'server'); return false;" />
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        <div class="float-left" id="controls">
+        
+        </div>
+        
+        <div id="error-container"></div>
+
+        <div id="footer">by Artit | 2013 | <a href="http://facebook.com/artit91">facebook.com/artit91</a></div>
+    </div>
+
+    <div id="game-container" style="display: none">
+
+        <canvas id="game" class="asteroids" width="800" height="600">
+        </canvas>
+
+        <canvas id="hud"  class="asteroids" width="800" height="600">
+        </canvas>
+    
+    </div>
+
+    <script type="text/javascript">
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'public/css/joystix-monospace.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+        ASTEROIDS.client.addGameCanvas("game");
+        ASTEROIDS.client.addHUDCanvas("hud");
+        ASTEROIDS.client.addGameContainer("game-container");
+        ASTEROIDS.client.addMenuContainer("menu-container");
+        ASTEROIDS.client.addErrorContainer("error-container");
+        document.getElementById("nickname").focus();
+    </script>
+</body>
+</html>

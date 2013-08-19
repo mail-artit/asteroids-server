@@ -1,0 +1,63 @@
+body {
+	margin: 0px;
+}
+
+
+canvas.asteroids {
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	width: 800px;
+	margin-left: -400px;
+}
+
+#menu-container {
+	width: 800px;
+	height: 600px;
+	margin: auto;
+	background-color: #FFFFEE;
+}
+
+#header {
+	width: 800px;
+	height: 150px;
+	background-image: url('../images/asteroids.png');
+	margin-bottom: 15px;
+}
+
+.center {
+	text-align: center;	
+}
+
+#login-form {
+	width: 100%;
+	font-size: 1.4em;
+	height: 300px;
+	margin-left: 10px;
+}
+
+.float-left {
+	float: left;
+	width: 400px;
+	height: 300px;
+}
+
+#controls {
+	background-image: url('../images/controls.png');
+}
+
+#footer {
+	clear: both;
+	height: auto;
+	background-color: #FFFFAA;
+	text-align: right;
+}
+
+#hud {
+	opacity: 0.6;
+}
+
+#error-container {
+	font-size: 1.1em;
+	color: red;
+}
