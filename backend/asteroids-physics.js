@@ -9,7 +9,7 @@ ASTEROIDS = (function (A) {
     CONSTANTS.acceleration = 0.2;
     CONSTANTS.friction = 0.06;
     CONSTANTS.maxSpeed = 5;
-    CONSTANTS.rotateAcceleration = 0.3;
+    CONSTANTS.rotateAcceleration = 0.5;
     CONSTANTS.rotateFriction = 0.2;
     CONSTANTS.maxRotateSpeed = 4;
     CONSTANTS.fireRate = 5;
@@ -123,8 +123,8 @@ ASTEROIDS = (function (A) {
                     item.rotateSpeed += CONSTANTS.rotateFriction;
                 }
 
-                if (item.rotateSpeed < CONSTANTS.rotateFriction && item.rotateSpeed > -CONSTANTS.rotateFriction) {
-                    item.rotationSpeed = 0;
+                if (item.rotateSpeed && Math.abs(item.rotateSpeed) < CONSTANTS.rotateFriction) {
+                    item.rotateSpeed = 0;
                 }
 
                 for (i = 0, n = item.bullets.length; i < n; i += 1) {

@@ -3,7 +3,8 @@
 	"version": "0.0.1",
 	"author": "Artit <artit91@gmail.com>",
 	"scripts": {
-		"start": "node ./backend/main.js"
+		"start": "node ./backend/main.js",
+		"start-debug": "node --debug ./backend/main.js"
 	},
 	"dependencies": {
 		"sockjs": "0.3.7",

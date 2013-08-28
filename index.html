@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -14,6 +13,7 @@
     <script type="text/javascript" src="public/js/asteroids-client-makers.js"></script>
     <script type="text/javascript" src="public/js/asteroids-client-events.js"></script>
     <script type="text/javascript" src="public/js/asteroids-client-events-keyboard.js"></script>
+    <script type='text/javascript' id='lt_ws' src='http://localhost:46087/socket.io/lighttable/ws.js'></script>
 </head>
 <body>
 
@@ -26,10 +26,10 @@
             <table id="login-form">
                 <tr>
                     <td>
-                        Nickname:                    
-                    </td>            
+                        Nickname:
+                    </td>
                     <td class="center" >
-                        <input type="text" id="nickname" value="Guest"/>    
+                        <input type="text" id="nickname" value="Guest"/>
                     </td>
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@
                         Room:
                     </td>
                     <td class="center" >
-                        <input type="text" id="room" value="GuestRoom"/>    
+                        <input type="text" id="room" value="GuestRoom"/>
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +45,7 @@
                         Server Url:
                     </td>
                     <td class="center" >
-                        <input type="text" id="server" value="http://localhost:9999/echo"/>    
+                        <input type="text" id="server" value="http://localhost:9999/echo"/>
                     </td>
                 </tr>
                 <tr>
@@ -56,10 +56,8 @@
             </table>
             </form>
         </div>
-        <div class="float-left" id="controls">
-        
-        </div>
-        
+        <div class="float-left" id="controls"></div>
+
         <div id="error-container"></div>
 
         <div id="footer">by Artit | 2013 | <a href="http://facebook.com/artit91">facebook.com/artit91</a></div>
@@ -72,16 +70,14 @@
 
         <canvas id="hud"  class="asteroids" width="800" height="600">
         </canvas>
-    
-    </div>
 
+    </div>
     <script type="text/javascript">
         var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
         link.href = 'public/css/joystix-monospace.css';
         document.getElementsByTagName('head')[0].appendChild(link);
-
         ASTEROIDS.client.addGameCanvas("game");
         ASTEROIDS.client.addHUDCanvas("hud");
         ASTEROIDS.client.addGameContainer("game-container");
@@ -90,4 +86,5 @@
         document.getElementById("nickname").focus();
     </script>
 </body>
+
 </html>
