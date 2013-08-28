@@ -4,7 +4,7 @@
 	"author": "Artit <artit91@gmail.com>",
 	"scripts": {
 		"start": "node ./backend/main.js",
-		"start-debug": "node --debug ./backend/main.js"
+		"debug": "node --debug ./backend/main.js"
 	},
 	"dependencies": {
 		"sockjs": "0.3.7",
