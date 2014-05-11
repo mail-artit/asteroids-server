@@ -1,5 +1,5 @@
-var ASTEROIDS = require("./asteroids").ASTEROIDS;
-var BISON = require("../shared/js/libs/bison/bison");
+var ASTEROIDS = require("./asteroids").ASTEROIDS,
+  BISON = require("./lib/bison");
 
 ASTEROIDS = (function (A) {
     "use strict";
@@ -48,11 +48,11 @@ ASTEROIDS = (function (A) {
 
         if (connectionData.auth) {
             connectionData.connection.write(BISON.encode({"type": "auth", "data" : {"type": "error", "message": "Already authenticated!"}}));
-        } else if (!data.nickname || data.nickname === "") {
+        } else if (!data.nickname) {
             connectionData.connection.write(BISON.encode({"type": "auth", "data" : {"type": "error", "message": "Bad nickname!"}}));
         } else if (data.nickname.length > 9) {
             connectionData.connection.write(BISON.encode({"type": "auth", "data" : {"type": "error", "message": "Nickname is too long! (maximum 9 characters)"}}));
-        } else if (!data.room || data.room === "") {
+        } else if (!data.room) {
             connectionData.connection.write(BISON.encode({"type": "auth", "data" : {"type": "error", "message": "Bad room name!"}}));
         } else if (data.room.length > 15) {
             connectionData.connection.write(BISON.encode({"type": "auth", "data" : {"type": "error", "message": "Room name is too long! (maximum 15 characters)"}}));

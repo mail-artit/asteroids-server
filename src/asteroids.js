@@ -1,4 +1,4 @@
-var BISON = require("../shared/js/libs/bison/bison");
+var BISON = require("./lib/bison");
 
 var A = (function () {
     "use strict";

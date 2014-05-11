@@ -1,5 +1,5 @@
-var ASTEROIDS = require("./asteroids").ASTEROIDS;
-var vector2d = require("../shared/js/vector2d").vector2d;
+var ASTEROIDS = require("./asteroids").ASTEROIDS,
+  vector2d = require("./lib/vector2d").vector2d;
 
 ASTEROIDS = (function (A) {
     "use strict";
